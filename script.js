@@ -9,16 +9,17 @@ let addExpenses = prompt("Перечислите возможные расход
 let deposit = confirm("Есть ли у вас депозит в банке?");
 let costs = [];
 
-for(let i = 0; i < 4; i++){
-  if(i<2)
-  {
+for(let i = 0; i < 2; i++){
     costs[i] = prompt("Введите обязательную статью расходов?");
-  }
-  else{
-    costs[i] = prompt("Во сколько это обойдется?", 123000);
-  }
 }
 
+function getExpensesMonth(){
+  while(!isNumber(costs[2]) && !isNumber(costs[3])){
+      costs[2] = prompt("Во сколько это обойдется?");
+      costs[3] = prompt("Во сколько это обойдется?");
+    }
+}
+ 
 let start = function() {
   do {
     money = prompt("Ваш месячный доход?");
@@ -27,18 +28,6 @@ let start = function() {
 };
 
 start();
-
-function getExpensesMonth(){
-  while(true){
-    if(isNumber(costs[2]) && isNumber(costs[3])){
-      return costs[2]+costs[3];
-    }
-    else{
-      costs[2] = prompt("Во сколько это обойдется?");
-      costs[3] = prompt("Во сколько это обойдется?");
-    }
-  }
-}
 
 console.log(getExpensesMonth());
 
@@ -49,10 +38,11 @@ function getAccumulatedMonth(money, cost, cost1){
 
 let accumulatedMonth = getAccumulatedMonth(money, costs[2], costs[3]);
 
-function getTargetMonth(accumulatedMonth, mission){
-  if(Math.ceil(mission/accumulatedMonth >= 0))
+let mathCeil = Math.ceil(mission/accumulatedMonth);
+function getTargetMonth(){
+  if(mathCeil >= 0)
   {
-    return Math.ceil(mission/accumulatedMonth);
+    return mathCeil;
   }
   else{
     return "Цель не будет достигнута";
