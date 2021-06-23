@@ -125,7 +125,7 @@ appData.getInfoDeposit = function (){
     do{
       appData.moneyDeposit = prompt("Какая сумма заложена?", 10000);
     }
-    while(isNumber(appData.moneyDeposit));
+    while(!isNumber(appData.moneyDeposit));
   }
 };
 
