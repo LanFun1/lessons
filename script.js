@@ -32,7 +32,7 @@ appData.asking = function (){
 }
 appData.asking();
 
-appData.getBudget = function getBudget(money, cost, cost1, data){
+appData.getBudget = function (money, cost, cost1, data){
   if(data === 1)
   {
     appData.budgetMonth= money - (cost+cost1);
