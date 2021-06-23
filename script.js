@@ -6,7 +6,7 @@ let isNumber = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
 let money;    
-let addExpenses = prompt("Перечислите возможные расходы за рассчитываемый п ериод через запятую");
+let addExpenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую");
 let deposit = confirm("Есть ли у вас депозит в банке?");
 let costs = [];
 
@@ -97,3 +97,7 @@ console.log(appData);
 console.log(appData.ExpensesMonth);
 console.log(appData.getTargetMonth);
 console.log(appData.getStatusIncome);
+console.log("Наша программа включает в себя данные:\n");
+for(let key in appData){
+  console.log("Ключ: "+key+"\tЗначениие: "+appData[key]);
+}
