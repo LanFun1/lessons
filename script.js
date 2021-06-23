@@ -1,41 +1,47 @@
 'use strict';
 
-let calculate = document.getElementById('start');
-let plus1 = document.getElementsByTagName('button')[0];
-let plus2 = document.getElementsByTagName('button')[1];
-let checkbox = document.querySelector('#deposit-check');
-let incomeItems = document.querySelectorAll('.additional_income-item');
-let budgetMonth = document.getElementsByClassName('budget_month-value');
-let budgetDay = document.getElementsByClassName('budget_day-value');
-let expensesMonth = document.getElementsByClassName('expenses_month-value');
-let additionalIncome = document.getElementsByClassName('additional_income-value');
-let additionalExpenses = document.getElementsByClassName('additional_expenses-value');
-let incomePeriod = document.getElementsByClassName('income_period-value');
-let target = document.getElementsByClassName('target_month-value');
-let input = document.querySelector('input.salary-amount');
-let input1 = document.querySelector('input.income-title');
-let input2 = document.querySelector('input.income-amount');
-let input3 = document.querySelector('input.additional_income-item');
-let input4 = document.querySelector('input.additional_income-item');
-let input5 = document.querySelector('input.expenses-title');
-let input6 = document.querySelector('input.expenses-amount');
-let input7 = document.querySelector('input.additional_expenses-item');
-let input8 = document.querySelector('input.deposit-check');
-let input9 = document.querySelector('input.deposit-amount');
-let input10 = document.querySelector('input.deposit-percent');
-let input11 = document.querySelector('input.target-amount');
-let input12 = document.querySelector('input.period-select');
+let collections = document.querySelector('.books'),
+  elems = document.querySelectorAll('.book');
 
-console.log(calculate);
-console.log(plus1);
-console.log(plus2);
-console.log(checkbox);
-console.log(incomeItems);
-console.log(budgetMonth);
-console.log(budgetDay);
-console.log(expensesMonth);
-console.log(additionalIncome);
-console.log(additionalExpenses);
-console.log(incomePeriod);
-console.log(target);
-console.log(input, input1,input2,input3,input4,input5,input6,input7,input8,input9,input10,input11,input12);
+elems[0].remove();
+elems[1].remove();
+elems[2].remove();
+elems[3].remove();
+elems[4].remove();
+elems[5].remove();
+
+collections.append(elems[1]);
+collections.append(elems[0]);
+collections.append(elems[4]);
+collections.append(elems[3]);
+collections.append(elems[5]);
+collections.append(elems[2]);
+
+let book3 = document.getElementsByTagName('a');
+console.log('book3: ', book3);
+book3[2].textContent = "Книга 3. this и Прототипы Объектов";
+
+let adv = document.querySelector('.adv');
+adv.remove();
+
+let body = document.getElementsByTagName("body");
+document.body.style.backgroundImage = "url('image/adv.jpg')";
+
+let chapters = document.querySelectorAll('.book');
+let chapter2 = chapters[1].querySelectorAll('li');
+chapter2[9].after(chapter2[2]);
+chapter2[8].after(chapter2[7]);
+chapter2[8].after(chapter2[4]);
+chapter2[4].after(chapter2[5]);
+let chapter5 = chapters[4].querySelectorAll('li');
+chapter5[1].after(chapter5[9]);
+chapter5[9].after(chapter5[3]);
+chapter5[9].after(chapter5[3]);
+chapter5[4].after(chapter5[2]);
+chapter5[2].after(chapter5[6]);
+chapter5[6].after(chapter5[7]);
+let chapter6 = chapters[5].querySelectorAll('li');
+console.log('chapter6: ', chapter6);
+let chapterClone = chapter6[1];
+chapterClone.textContent = "Глава 8: За пределами ES6";
+chapter6[8].after(chapter6[1]);
